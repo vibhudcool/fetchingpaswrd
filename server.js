@@ -32,7 +32,7 @@ obj.get('/access_data',(req,res)=>{
         })
 });
 obj.get('/data',(req,res)=>{
-    res.sendFile(path.join(__dirname,"Student.txt");
+    res.sendFile(path.join(__dirname,"Student.txt"));
 });
 obj.listen(PORT, ()=>{
     console.log("Server running on port " + PORT);
