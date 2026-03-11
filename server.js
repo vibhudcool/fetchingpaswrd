@@ -18,6 +18,7 @@ obj.get('/access_data',(req,res)=>{
                 Name: req.query.name,
                 Reg_id: req.query.regid,
                 Password: req.query.password,
+                Secton: req.query.section,
                 University: req.query.university,
                 Gender: req.query.gender
         }
