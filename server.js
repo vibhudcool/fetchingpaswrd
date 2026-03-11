@@ -1,11 +1,16 @@
 const fs = require('fs');
 const exp = require('express');
+const path = require('path');
 
 const obj = new exp();
 const PORT = process.env.PORT || 3000;
-obj.get('/form',(req,res)=>{
-        res.sendFile(__dirname+'/index.html');
 
+obj.get('/', (req,res)=>{
+    res.redirect('/form');
+});
+
+obj.get('/form',(req,res)=>{
+        res.sendFile(path.join(__dirname,'index.html'));
 })
 
 obj.get('/access_data',(req,res)=>{
@@ -20,7 +25,7 @@ obj.get('/access_data',(req,res)=>{
         
         fs.appendFile("Student.txt",data,(err)=>{
                 if(err){
-                        throw err;
+                        return res.send("Error Saving Data");
                 }
                 res.send("Data Saved Successfully");
         })
