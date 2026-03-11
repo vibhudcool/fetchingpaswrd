@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+        <style>
+                body{
+                        margin: 100px 0px;
+                        
+                }
+                form{
+                        border: 2px black solid;
+                        align-items: center;
+                        justify-content: center;
+                        display: flex;
+                        margin: auto;
+                        font-size: 30px;
+                        border-radius: 5px;
+                        padding: 40px;
+                }
+                .outline{
+                        border: 2px green solid;
+                        font-size: 30px;
+                        border-radius: 5px;
+                        padding: 8px;
+                }
+                .btn{
+                        border-radius: 10px;
+                        border: 3px white solid;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 35px;
+                        margin: 0px 100px;
+                        background-color: black;
+                        color: white;
+                        padding: 12px;
+                }
+        </style>
+</head>
+<body>
+        <form action="/access_data" method="get">
+                <div class="container">
+                <label for="">Reg id: </label><br>
+                <input type="number" name="regid" placeholder="Enter your regid" class="outline" required><br><br>
+
+                <label for="">Name: </label><br>
+                <input type="text" name="name" placeholder="Enter your name" class="outline"><br><br>
+
+                <label for="">Section: </label><br>
+                <input type="text" name="section" placeholder="Enter your section" class="outline"><br><br>
+
+                <label for="">University: </label><br>
+                <input type="text" name="university" placeholder="Enter your university" class="outline"><br><br>
+
+                <label for="">Gender: </label><br>
+                <input type="radio" name="gender" value="Male" class="outline" required>
+                <label for="">Male</label>
+                
+                <input type="radio" name="gender" value="Female" class="outline">
+                <label for="">Female</label><br><br>
+
+                <label for="">Password: </label><br>
+                <input type="password" name="password" placeholder="Enter your password" class="outline" required><br><br>
+
+                <input type="submit" class="btn">
+                </div>
+        </form>
+</body>
+</html>
