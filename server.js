@@ -4,7 +4,7 @@ const exp = require('express');
 const obj = new exp();
 const PORT = process.env.PORT || 3000;
 obj.get('/form',(req,res)=>{
-        res.sendFile(__dirname+'/formcreate.html');
+        res.sendFile(__dirname+'/index.html');
 
 })
 
