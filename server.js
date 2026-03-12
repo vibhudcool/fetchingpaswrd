@@ -1,6 +1,7 @@
 const fs = require('fs');
 const exp = require('express');
 const path = require('path');
+var encoded = exp.urlencoded({extended:true})
 
 const obj = new exp();
 const PORT = process.env.PORT || 3000;
@@ -13,14 +14,14 @@ obj.get('/form',(req,res)=>{
         res.sendFile(path.join(__dirname,'index.html'));
 })
 
-obj.get('/access_data',(req,res)=>{
+obj.post('/access_data',encoded,(req,res)=>{
         const student ={
-                Name: req.query.name,
-                Reg_id: req.query.regid,
-                Password: req.query.password,
-                Secton: req.query.section,
-                University: req.query.university,
-                Gender: req.query.gender
+                Name: req.body.name,
+                Reg_id: req.body.regid,
+                Password: req.body.password,
+                Secton: req.body.section,
+                University: req.body.university,
+                Gender: req.body.gender
         }
         const data = JSON.stringify(student,null,2) + "\n";
         
